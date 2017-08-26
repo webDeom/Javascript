@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+			<meta charset="UTF-8"> <!--声明编码 UTF-8(国际编码)-->
+			<title>网站标题</title>
+			<style type="text/css">
+				div{width:200px;height:200px;background:red;display:none}
+				.active{background:yellow;}
+			</style>
+			<script type="text/javascript">
+			window.onload=function(){
+				var i = 0 ;
+				var obtn = document.getElementsByTagName("input");
+				var oDiv = document.getElementsByTagName("div");
+				for(i=0;i<obtn.length;i++){
+					obtn[i].index=i;
+					obtn[i].onclick=function(){
+						for(i=0;i<obtn.length;i++){
+							obtn[i].className="";
+							oDiv[i].style.display="none"
+						}
+						//alert(this.index)
+						oDiv[this.index].style.display="block";
+						this.className="active";
+					}
+				}
+			}
+			</script>
+	 </head>
+	 
+	 <body>
+		<input class="active" type="button" value="1" />
+		<input type="button" value="2" />
+		<input type="button" value="3" />
+		<div style="display:block">11111</div>
+		<div>22222</div>
+		<div>33333</div>
+	 </body>
+</html>
